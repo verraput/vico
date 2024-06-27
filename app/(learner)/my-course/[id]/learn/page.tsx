@@ -3,7 +3,7 @@ import CourseContentList from "@/components/CourseContentList";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   const router = useRouter();
   const handleToDiscussion = () => {
     router.push("/my-course/ini-idnya/discuss");
@@ -69,4 +69,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

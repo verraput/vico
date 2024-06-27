@@ -3,7 +3,7 @@ import NavbarMentor from "@/components/NavbarMentor";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const layout = ({
+const Layout = ({
   profile,
   photo,
   closeAccount,
@@ -80,4 +80,4 @@ const layout = ({
   );
 };
 
-export default layout;
+export default Layout;
