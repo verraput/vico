@@ -1,7 +1,8 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 
-const Page = () => {
+const page = () => {
   return (
     <div className="mx-20">
       <div className="mb-10 text-center mt-10">
@@ -28,4 +29,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

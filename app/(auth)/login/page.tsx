@@ -1,12 +1,66 @@
+"use client";
+import {
+  getProfileAsync,
+  loginAsync,
+  selectLogin,
+} from "@/lib/features/auth/authSlice";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { alertService } from "@/services";
+import { getSession, signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
-const page = () => {
+const Page = () => {
+  const dispatch = useAppDispatch();
+  const login = useAppSelector(selectLogin);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
+
+  const handleLogin = () => {
+    dispatch(
+      loginAsync({
+        email: email,
+        pass: password,
+      })
+    ).then((res: any) => {
+      if (res.payload.code !== 200) {
+        alertService.error(res.payload.message);
+      }
+    });
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("token");
+      if (token) {
+        dispatch(getProfileAsync());
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (login.user_type !== "" || login.user_type !== null) {
+      if (login.user_type === "learner") {
+        router.push("/home");
+      } else if (login.user_type === "mentor") {
+        router.push("/courses");
+      }
+    }
+  }, [login.user_type]);
+
   return (
     <main className="mx-auto text-center h-screen flex items-center">
       <div className="overflow-hidden h-screen max-md:hidden grow">
-        <Image alt="Orang belajar dengan menggunakan laptop" width={1000} height={1000} src="/windows.jpg" className="h-full object-cover w-full" />
+        <Image
+          alt="Orang belajar dengan menggunakan laptop"
+          width={1000}
+          height={1000}
+          src="/windows.jpg"
+          className="h-full object-cover w-full"
+        />
       </div>
       <div className="flex flex-col gap-10 mx-20 max-md:mx-auto">
         <img />
@@ -25,7 +79,12 @@ const page = () => {
               <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
               <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
             </svg>
-            <input type="text" className="grow" placeholder="Email" />
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              className="grow"
+              placeholder="Email"
+            />
           </label>
 
           <label className="input input-bordered flex items-center gap-2">
@@ -41,7 +100,12 @@ const page = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <input type="password" className="grow" placeholder="Password" />
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              className="grow"
+              placeholder="Password"
+            />
           </label>
 
           <div className="form-control">
@@ -64,9 +128,15 @@ const page = () => {
         </div>
 
         <div className="space-y-3">
-          <button className="btn btn-default w-full">
-            {/* TODO: Add loading class when fetching a login api */}
-            <span className="loading-spinner" />
+          <button
+            onClick={() => handleLogin()}
+            className="btn btn-default w-full"
+          >
+            <span
+              className={`${
+                login.status === "loading" ? "loading" : ""
+              } loading-spinner`}
+            />
             Masuk
           </button>
           <Link href={"/register"} className="flex text-sm space-x-1">
@@ -79,4 +149,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

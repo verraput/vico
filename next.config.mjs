@@ -15,7 +15,17 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "img.daisyui.com",
+        pathname: "/images/stock/",
+      },
+      {
+        protocol: "https",
+        hostname: "storage.googleapis.com",
+        pathname: "/*",
         port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
       },
     ],
   },
