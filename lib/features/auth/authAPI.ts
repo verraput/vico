@@ -1,7 +1,7 @@
 import { loginResponse, registerResponse } from "@/data/authInterface";
 
 export const login = async (email: string, password: string) => {
-  const response = await fetch("http://localhost:5000/api/auth/login", {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/auth/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
@@ -12,7 +12,7 @@ export const login = async (email: string, password: string) => {
 };
 
 export const logout = async () => {
-  const response = await fetch("http://localhost:5000/api/auth/logout", {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/auth/logout`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
   });
@@ -27,7 +27,7 @@ export const registerMentor = async (
   password: string,
   confirm_password: string
 ) => {
-  const response = await fetch("http://localhost:5000/api/auth/register", {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/auth/register`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -48,7 +48,7 @@ export const registerLearner = async (
   password: string,
   confirm_password: string
 ) => {
-  const response = await fetch("http://localhost:5000/api/auth/register", {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/auth/register`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -65,7 +65,7 @@ export const registerLearner = async (
 };
 
 export const getProfile = async (token: string) => {
-  const response = await fetch("http://localhost:5000/api/auth", {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/auth`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

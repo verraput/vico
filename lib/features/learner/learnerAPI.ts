@@ -13,13 +13,16 @@ import {
 
 export const getAllCourse = async () => {
   const token = localStorage.getItem("token");
-  const response = await fetch("http://localhost:5000/api/course", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}api/course`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
   const result: IgetAllCourse = await response.json();
 
   return result;
@@ -27,13 +30,16 @@ export const getAllCourse = async () => {
 
 export const getCourseDetail = async (id: number) => {
   const token = localStorage.getItem("token");
-  const response = await fetch(`http://localhost:5000/api/course/one/${id}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}api/course/one/${id}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
   const result: IgetCourseDetail = await response.json();
 
   return result;
@@ -42,7 +48,7 @@ export const getCourseDetail = async (id: number) => {
 export const getDiskusi = async (idCourse: number) => {
   const token = localStorage.getItem("token");
   const response = await fetch(
-    `http://localhost:5000/api/course/${idCourse}/diskusi`,
+    `${process.env.NEXT_PUBLIC_API_URL}api/course/${idCourse}/diskusi`,
     {
       method: "GET",
       headers: {
@@ -59,7 +65,7 @@ export const getDiskusi = async (idCourse: number) => {
 export const postDiskusi = async (idCourse: number, message: string) => {
   const token = localStorage.getItem("token");
   const response = await fetch(
-    `http://localhost:5000/api/course/${idCourse}/diskusi`,
+    `${process.env.NEXT_PUBLIC_API_URL}api/course/${idCourse}/diskusi`,
     {
       method: "POST",
       headers: {
@@ -77,7 +83,7 @@ export const postDiskusi = async (idCourse: number, message: string) => {
 export const deleteDiskusi = async (idDiskusi: number) => {
   const token = localStorage.getItem("token");
   const response = await fetch(
-    `http://localhost:5000/api/course/diskusi/${idDiskusi}`,
+    `${process.env.NEXT_PUBLIC_API_URL}api/course/diskusi/${idDiskusi}`,
     {
       method: "DELETE",
       headers: {
@@ -93,7 +99,7 @@ export const deleteDiskusi = async (idDiskusi: number) => {
 
 export const getCart = async () => {
   const token = localStorage.getItem("token");
-  const response = await fetch("http://localhost:5000/api/pay", {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/pay`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -107,7 +113,7 @@ export const getCart = async () => {
 
 export const addToCart = async (idCourse: number) => {
   const token = localStorage.getItem("token");
-  const response = await fetch(`http://localhost:5000/api/pay`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/pay`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -122,7 +128,7 @@ export const addToCart = async (idCourse: number) => {
 
 export const removeFromCart = async (idCourse: number) => {
   const token = localStorage.getItem("token");
-  const response = await fetch(`http://localhost:5000/api/pay`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/pay`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -137,13 +143,16 @@ export const removeFromCart = async (idCourse: number) => {
 
 export const getAllCourseLearner = async () => {
   const token = localStorage.getItem("token");
-  const response = await fetch("http://localhost:5000/api/course/learner", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}api/course/learner`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
   const result: IgetAllCourseLearner = await response.json();
 
   return result;
@@ -151,13 +160,16 @@ export const getAllCourseLearner = async () => {
 
 export const getDetailCourselearner = async (idCourse: number) => {
   const token = localStorage.getItem("token");
-  const response = await fetch(`http://localhost:5000/api/course/learner/${idCourse}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}api/course/learner/${idCourse}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
   const result: IgetDetailCourseLearner = await response.json();
 
   return result;

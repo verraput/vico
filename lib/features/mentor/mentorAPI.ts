@@ -14,7 +14,7 @@ import {
 
 export const createCourse = async (course: FormData) => {
   const token = localStorage.getItem("token");
-  const response = await fetch("http://localhost:5000/api/course", {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/course`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -28,7 +28,7 @@ export const createCourse = async (course: FormData) => {
 
 export const updateCourse = async (course: IcourseUpdate) => {
   const token = localStorage.getItem("token");
-  const response = await fetch("http://localhost:5000/api/course", {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/course`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -36,7 +36,6 @@ export const updateCourse = async (course: IcourseUpdate) => {
     },
     body: JSON.stringify({ ...course }),
   });
-  console.log("sampai ko", course);
   const result: IcreateCourse = await response.json();
 
   return result;
@@ -44,7 +43,7 @@ export const updateCourse = async (course: IcourseUpdate) => {
 
 export const deleteCourse = async (idCourse: number) => {
   const token = localStorage.getItem("token");
-  const response = await fetch(`http://localhost:5000/api/course/${idCourse}`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/course/${idCourse}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -58,7 +57,7 @@ export const deleteCourse = async (idCourse: number) => {
 
 export const addUserToCourse = async (idCourse: number, idUser: string) => {
   const token = localStorage.getItem("token");
-  const response = await fetch(`http://localhost:5000/api/pay/add-learner`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/pay/add-learner`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -73,7 +72,7 @@ export const addUserToCourse = async (idCourse: number, idUser: string) => {
 
 export const getMentorCourses = async () => {
   const token = localStorage.getItem("token");
-  const response = await fetch("http://localhost:5000/api/course/mentor", {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/course/mentor`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -89,7 +88,7 @@ export const getMentorCourses = async () => {
 export const getMentorCourseDetail = async (idCourse: number) => {
   const token = localStorage.getItem("token");
   const response = await fetch(
-    `http://localhost:5000/api/course/mentor/${idCourse}`,
+    `${process.env.NEXT_PUBLIC_API_URL}api/course/mentor/${idCourse}`,
     {
       method: "GET",
       headers: {
@@ -105,7 +104,7 @@ export const getMentorCourseDetail = async (idCourse: number) => {
 
 export const getAllLearnerinCourse = async (idCourse: number) => {
   const token = localStorage.getItem("token");
-  const response = await fetch("http://localhost:5000/api/pay/all-learner", {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/pay/all-learner`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -121,7 +120,7 @@ export const getAllLearnerinCourse = async (idCourse: number) => {
 export const searchLearner = async (search: string) => {
   const token = localStorage.getItem("token");
   const response = await fetch(
-    `http://localhost:5000/api/pay/search-learner?q=${search}`,
+    `${process.env.NEXT_PUBLIC_API_URL}api/pay/search-learner?q=${search}`,
     {
       method: "GET",
       headers: {
@@ -141,7 +140,7 @@ export const deleteLearnerInCourse = async (
   idUser: string
 ) => {
   const token = localStorage.getItem("token");
-  const response = await fetch(`http://localhost:5000/api/pay/delete-learner`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/pay/delete-learner`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
