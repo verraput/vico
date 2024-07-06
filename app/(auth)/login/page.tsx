@@ -54,7 +54,7 @@ const Page = () => {
   return (
     <main className="mx-auto text-center h-screen flex items-center">
       <div className="overflow-hidden h-screen max-md:hidden grow">
-        <Image
+        <img
           alt="Orang belajar dengan menggunakan laptop"
           width={1000}
           height={1000}

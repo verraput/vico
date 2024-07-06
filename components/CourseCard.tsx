@@ -24,7 +24,7 @@ const CourseCard = (course: IcourseHome) => {
     <Link href={`/course/${course.id}`}>
       <div className="card w-full bg-base-100 shadow-xl transition-all active:scale-95">
         <figure>
-          <Image
+          <img
             height={300}
             width={400}
             src={

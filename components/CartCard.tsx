@@ -46,7 +46,7 @@ const CartCard = (cart: Icart) => {
 
   return (
     <div className="flex gap-5">
-      <Image
+      <img
         height={720}
         width={1080}
         alt="thumbnail course"

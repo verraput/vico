@@ -52,7 +52,7 @@ const Layout = ({
         <div className="bg-base-300 flex flex-col sticky top-0 h-screen max-w-[300px]">
           <div className="mx-auto mt-10 mb-5">
             <div className="mask mask-squircle w-24">
-              <Image
+              <img
                 alt="profile pengguna"
                 height={120}
                 width={120}

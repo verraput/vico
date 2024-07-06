@@ -4,7 +4,7 @@ import React from "react";
 const CheckoutCard = () => {
   return (
     <div className="flex gap-5 items-center">
-      <Image
+      <img
         height={720}
         width={1080}
         alt="thumbnail course"

@@ -98,7 +98,7 @@ const Page = ({ params }: { params: { id: string } }) => {
           </p>
         </div>
         <div className="max-w-96">
-          <Image
+          <img
             src={courseDetail.data.thumbnail ?? "/placeholder.avif"}
             alt="hero"
             className="rounded-lg"

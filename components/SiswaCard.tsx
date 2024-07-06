@@ -15,7 +15,7 @@ const SiswaCard = ({
       className="bg-base-300 px-4 py-2 flex gap-4"
     >
       <div className="mask bg-black mask-squircle w-24">
-        <Image
+        <img
           alt="profile pengguna"
           height={120}
           width={120}

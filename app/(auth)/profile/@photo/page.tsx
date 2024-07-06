@@ -15,7 +15,7 @@ const Page = () => {
       <div className="space-y-3">
         <h4 className="font-medium text-xl">Image preview</h4>
 
-        <Image
+        <img
           height={320}
           width={320}
           src=""
