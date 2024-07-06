@@ -14,7 +14,7 @@ import { FieldArray, Form, Formik, useFormikContext } from "formik";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const page = ({
+const Page = ({
   params,
 }: {
   params: {
@@ -281,4 +281,4 @@ const page = ({
   );
 };
 
-export default page;
+export default Page;

@@ -52,7 +52,7 @@ const courseValidation = Yup.object().shape({
     .required("Section is required"),
 });
 
-const page = () => {
+const Page = () => {
   const dispatch = useAppDispatch();
   const postCourseStatus = useAppSelector(selectPostCourseStatus);
   const inputThumbnailRef = React.useRef<HTMLInputElement>(null);
@@ -311,4 +311,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

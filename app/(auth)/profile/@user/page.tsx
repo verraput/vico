@@ -3,7 +3,7 @@ import { selectLogin } from "@/lib/features/auth/authSlice";
 import { useAppSelector } from "@/lib/hooks";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   const profile = useAppSelector(selectLogin);
 
   return (
@@ -84,4 +84,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

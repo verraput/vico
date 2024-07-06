@@ -12,7 +12,7 @@ import {
   selectCourseDetail,
 } from "@/lib/features/learner/learnerSlice";
 import { alertService } from "@/services";
-const page = ({ params }: { params: { id: string } }) => {
+const Page = ({ params }: { params: { id: string } }) => {
   const router = useRouter();
 
   const profile = useAppSelector(selectLogin);
@@ -148,4 +148,4 @@ const page = ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default page;
+export default Page;

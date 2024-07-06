@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <main className="mx-auto text-center h-screen flex items-center justify-center">
       <div className="flex flex-col gap-10 max-w-[20%]">
@@ -36,7 +36,9 @@ const page = () => {
             <span className="loading-spinner" />
             Masuk
           </button>
-          <h5 className="font-semibold text-xl text-start pt-5">Setelah terkirim</h5>
+          <h5 className="font-semibold text-xl text-start pt-5">
+            Setelah terkirim
+          </h5>
           <p className="text-start pb-5 ">
             mohon cek email tertaut anda, lalu silahkan ikuti alur pemulihan
             akun sesuai dengan yang tertera pada email
@@ -51,4 +53,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

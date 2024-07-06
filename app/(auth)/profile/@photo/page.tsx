@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <div className="mx-20">
       <div className="mb-10 text-center mt-10">
@@ -15,7 +15,13 @@ const page = () => {
       <div className="space-y-3">
         <h4 className="font-medium text-xl">Image preview</h4>
 
-        <Image height={320} width={320} src="" className="mx-auto border bg-base-300 border-base-100" alt="Preview profile user" />
+        <Image
+          height={320}
+          width={320}
+          src=""
+          className="mx-auto border bg-base-300 border-base-100"
+          alt="Preview profile user"
+        />
 
         <h4 className="font-medium text-xl">Change image</h4>
 
@@ -29,4 +35,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -58,7 +58,7 @@ const courseValidation = Yup.object().shape({
     )
     .required("Section is required"),
 });
-const layout = ({
+const Layout = ({
   children,
   params,
 }: {
@@ -100,4 +100,4 @@ const layout = ({
   );
 };
 
-export default layout;
+export default Layout;

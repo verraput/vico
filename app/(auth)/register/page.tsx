@@ -47,7 +47,7 @@ const mentorValidation = Yup.object().shape({
     .matches(/^62\d+$/, "Nomor Whatsapp harus diawali dengan 62"),
 });
 
-const page = () => {
+const Page = () => {
   const dispatch = useAppDispatch();
   const registerData = useAppSelector(selectRegister);
   const router = useRouter();
@@ -469,4 +469,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

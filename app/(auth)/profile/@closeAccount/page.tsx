@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <div className="mx-20">
       <div className="mb-10 text-center mt-10">
@@ -21,4 +21,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const layout = ({
+const Layout = ({
   user,
   photo,
   closeAccount,
@@ -110,4 +110,4 @@ const layout = ({
   );
 };
 
-export default layout;
+export default Layout;

@@ -3,7 +3,7 @@ import CheckoutCard from "@/components/CheckoutCard";
 import Image from "next/image";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <div className="container flex mx-auto pt-4 pb-10 px-5 bg-base-300 gap-5">
       <div className="grow">
@@ -26,10 +26,12 @@ const page = () => {
       <div className="sticky top-16 h-fit">
         <h4 className="text-2xl font-medium">Total:</h4>
         <h5 className="text-3xl font-semibold">Rp. 75.000,00-</h5>
-        <button className="btn btn-primary btn-wide mt-5">Go to Whatsapp</button>
+        <button className="btn btn-primary btn-wide mt-5">
+          Go to Whatsapp
+        </button>
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;

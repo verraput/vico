@@ -16,7 +16,7 @@ import { alertService } from "@/services";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
-const page = ({
+const Page = ({
   params,
 }: {
   params: {
@@ -252,4 +252,4 @@ const page = ({
   );
 };
 
-export default page;
+export default Page;
