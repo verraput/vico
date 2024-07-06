@@ -65,6 +65,7 @@ const Page = ({ params }: { params: { id: string } }) => {
             profile={item.user.profile_picture}
             timestamp={item.createdAt}
             type={profile.uuid === item.user.uuid ? "self" : "other"}
+            key={index}
           />
         ))}
       </div>
